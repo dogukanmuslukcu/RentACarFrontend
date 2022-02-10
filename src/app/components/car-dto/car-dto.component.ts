@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CarDto } from 'src/app/models/CarDto';
+import { CarDtoService } from 'src/app/services/car/car-dto.service';
 
 @Component({
   selector: 'app-car-dto',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarDtoComponent implements OnInit {
 
-  constructor() { }
+  carDtos:CarDto[] = []
+  constructor(private carDtoService : CarDtoService) { }
 
   ngOnInit(): void {
+    this.getCarDtos();
   }
 
+  getCarDtos(){
+    this.carDtoService.getCarDtos().subscribe(response => {
+      this.carDtos = response.data;
+    }
+    )
+  }
 }

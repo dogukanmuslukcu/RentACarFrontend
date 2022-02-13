@@ -19,7 +19,9 @@ export class CarDtoComponent implements OnInit {
        if(params["brandId"]){
  this.getCarDtosBrandId(params["brandId"])
        }
-      else{
+      else if(params["colorId"]){
+        this.getCarDtosColorId(params["colorId"])
+      }else{
         this.getCarDtos()
       }
     })
@@ -37,5 +39,10 @@ export class CarDtoComponent implements OnInit {
    this.carDtoService.getCarDtosBrandId(brandId).subscribe(response =>{
      this.carDtos = response.data
    })
+  }
+  getCarDtosColorId(colorId:number){
+    this.carDtoService.getCarDtosColorId(colorId).subscribe(response =>{
+      this.carDtos = response.data;
+    })
   }
 }

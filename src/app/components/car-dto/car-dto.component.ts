@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CarImage } from 'src/app/models/carImage';
 import { CarDto } from 'src/app/models/carDto';
 import { CarDtoService } from 'src/app/services/car/car-dto.service';
+import { CarImageService } from 'src/app/services/carImage/car-image.service';
 
 @Component({
   selector: 'app-car-dto',
@@ -11,7 +13,7 @@ import { CarDtoService } from 'src/app/services/car/car-dto.service';
 export class CarDtoComponent implements OnInit {
 
   carDtos:CarDto[] = []
-  constructor(private carDtoService : CarDtoService, private activatedRoute :ActivatedRoute) { }
+  constructor(private carDtoService : CarDtoService,private activatedRoute :ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -21,7 +23,8 @@ export class CarDtoComponent implements OnInit {
        }
       else if(params["colorId"]){
         this.getCarDtosColorId(params["colorId"])
-      }else{
+      }
+      else{
         this.getCarDtos()
       }
     })
@@ -45,4 +48,6 @@ export class CarDtoComponent implements OnInit {
       this.carDtos = response.data;
     })
   }
+
+
 }

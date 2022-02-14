@@ -32,7 +32,6 @@ export class ColorComponent implements OnInit {
       return "list-group-item active"
     }
     else{
-      this.currentColor
       return "list-group-item "
     }
   }

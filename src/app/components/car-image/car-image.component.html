@@ -1,3 +1,14 @@
+
+<!-- <div  class="card text-dark bg-success border-dark  mb-3"  *ngFor="let carImage of carImages index as i; first as firstImage  " style="width: 18rem;">
+  <img *ngIf="carImage.imagePath!=null" src="https://localhost:44309/{{carImage.imagePath}}" class="card-img-top" alt="carImage.imagePath">
+  <img *ngIf="carImage.imagePath==null" src="https://localhost:44309/images/cars/logo.jpg" class="card-img-top" alt="carImage.imagePath">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a routerLink="" class="btn btn-secondary">Araçlara Geri Dön</a>
+  </div>
+</div> -->
+
 <div id="carouselExampleControls"
 
  class="carousel slide border border-dark" data-bs-ride="carousel">
@@ -8,6 +19,7 @@
       <img *ngIf="carImage.imagePath==null" src="https://localhost:44309/images/cars/logo.jpg" class="d-block w-100" alt="carImage.imagePath">
 
  </div>
+
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -19,3 +31,12 @@
   </button>
 
 </div>
+<div class="card" style="width: 100;">
+  <div class="card-body">
+    <h5 class="card-title">CarTitle</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a routerLink="" class="btn btn-outline-primary">Araçlara Dön</a>
+  </div>
+</div>
+

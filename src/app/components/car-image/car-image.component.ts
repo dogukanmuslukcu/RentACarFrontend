@@ -14,21 +14,27 @@ carImages:CarImage[]=[];
   constructor(private carImageService:CarImageService,  private activatedRoute :ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.activatedRoute.params.subscribe(params =>{
+ if(params["carId"]){
+       this.getCarImageCarId(params["carId"])
+     }
+     else{
        this.getCarImages()
      }
+   })
 
-
+  }
 
   getCarImages(){
     this.carImageService.getCarImages().subscribe(response=>{
       this.carImages=response.data;
     })
   }
-  getCarImagesCarId(carId:number){
+  getCarImageCarId(carId:number){
     this.carImageService.getCarImagesCarId(carId).subscribe(response=>{
-      this.carImages = response.data;
+      this.carImages = response.data
     })
   }
+
 
 }

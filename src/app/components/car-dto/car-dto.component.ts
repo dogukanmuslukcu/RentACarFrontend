@@ -13,7 +13,9 @@ import { CarImageService } from 'src/app/services/carImage/car-image.service';
 export class CarDtoComponent implements OnInit {
 
   carDtos:CarDto[] = []
-  constructor(private carDtoService : CarDtoService,private activatedRoute :ActivatedRoute) { }
+  carImages:CarImage[]=[]
+  currentCarDto:CarDto
+  constructor(private carDtoService : CarDtoService,private carImageService:CarImageService,private activatedRoute :ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -48,6 +50,10 @@ export class CarDtoComponent implements OnInit {
       this.carDtos = response.data;
     })
   }
+  setCurrentCarDto(carDto:CarDto){
+    this.currentCarDto =carDto;
+  }
+
 
 
 }

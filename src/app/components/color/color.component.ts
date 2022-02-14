@@ -35,6 +35,14 @@ export class ColorComponent implements OnInit {
       return "list-group-item "
     }
   }
+  getAllCarDto(){
+    if(!this.currentColor){
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+    }
+  }
 
 
 }

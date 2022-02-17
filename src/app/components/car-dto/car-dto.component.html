@@ -11,14 +11,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let carDto of carDtos" >
+    <tr *ngFor="let carDto of carDtos" class="list-group-item-light" >
       <td>{{carDto.carId}}</td>
       <td>{{carDto.brandName}}</td>
       <td>{{carDto.colorName}}</td>
       <td>{{carDto.modelYear}}</td>
       <td>{{carDto.dailyPrice}}</td>
       <td>{{carDto.description}}</td>
-      <td><button routerLink="/carDto/carImage/{{carDto.carId}}"  (click)="setCurrentCarDto(carDto)"  >Araç Detay</button></td>
+      <td><button routerLink="/carDto/carImage/{{carDto.carId}}"  (click)="setCurrentCarDto(carDto)"  class="btn btn-outline-danger"  >Araç Detay</button></td>
     </tr>
   </tbody>
 </table>

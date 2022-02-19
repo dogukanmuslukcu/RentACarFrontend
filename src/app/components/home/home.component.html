@@ -2,15 +2,19 @@
 <div class="table-xl">
   <div class="row">
     <div class="col-md-4">
-      <ul class="list-group-item list-group-item-info">
+      <div class="mb-3">
+        <label for="filterText" class="form-label"></label>
+        <input type="text" [(ngModel)]="filterTextColor" class="form-control" id="filterText" placeholder="Renk İsmi Giriniz">
+      </div>
+      <ul class="list-group-item list-group-item-info"  >
         <li class="list-group-item btn-primary"
           routerLink="" >
-          Tüm Markalar
+          Tüm Renkler
           </li>
         <li class="list-group-item-danger"
           (click)="setCurrentColor(color)"
           routerLink="/carDto/color/{{ color.colorId }}"
-          *ngFor="let color of colors"
+          *ngFor="let color of colors |colorFilter:filterTextColor"
           [class]="getCurrentColor(color)"
         >
           {{ color.colorName }}
@@ -69,6 +73,10 @@
   <br>
   <div class="row">
     <div class="col-md-4" margin="left">
+      <div class="mb-3">
+        <label for="filterText" class="form-label"></label>
+        <input type="text" [(ngModel)]="filterTextBrand" class="form-control" id="filterText" placeholder="Marka İsmi Giriniz">
+      </div>
       <ul class="list-group-item list-group-item-info">
         <li class="list-group-item btn-primary" routerLink="" >
           Tüm Markalar
@@ -76,12 +84,16 @@
       <li class="list-group-item-danger"
       (click)=" setCurrentBrand(brand)"
         routerLink="/carDto/brand/{{brand.brandId}}"
-         *ngFor="let brand of brands"
+         *ngFor="let brand of brands |brandFilter:filterTextBrand"
          [class]="getCurrentBrand(brand)"
         >{{brand.brandName}}</li>
       </ul>
     </div>
     <div class="col-md-8">
+      <div class="mb-3">
+        <label for="filterText" class="form-label"></label>
+        <input type="text" [(ngModel)]="filterTextCarDto" class="form-control" id="filterText" placeholder="Araba İle İlgili Özellik Giriniz">
+      </div>
       <table class="table caption-top">
         <thead>
           <tr>
@@ -93,11 +105,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let carDto of carDtos" class="list-group-item-light" >
+          <tr *ngFor="let carDto of carDtos |carFilter:filterTextCarDto" class="list-group-item-light" >
             <td>{{carDto.brandName}}</td>
             <td>{{carDto.colorName}}</td>
             <td>{{carDto.modelYear}}</td>
-            <td>{{carDto.dailyPrice}}</td>
+            <td>{{carDto.dailyPrice | currency:"TL "}}</td>
             <td><button routerLink="/carDto/carImage/{{carDto.carId}}"
                 (click)="setCurrentCarDto(carDto)"
                 class="btn btn-outline-danger" >Araç Detay</button></td>

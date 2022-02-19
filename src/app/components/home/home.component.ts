@@ -24,6 +24,9 @@ export class HomeComponent implements OnInit {
   currentColor:Color;
   currentCarDto:CarDto;
   currentBrand :Brand;
+  filterTextColor="";
+  filterTextBrand="";
+  filterTextCarDto="";
 
   constructor(private carDtoService:CarDtoService,
             private carImageService:CarImageService,

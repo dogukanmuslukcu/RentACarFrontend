@@ -1,25 +1,52 @@
-<table class="table ">
-  <thead>
-    <tr>
-      <th>Araba Id</th>
-      <th>Marka Adı</th>
-      <th>Renk</th>
-      <th>Model Yılı</th>
-      <th>Fiyat</th>
-      <th>Araba Detay</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let carDto of carDtos" class="list-group-item-light" >
-      <td>{{carDto.carId}}</td>
-      <td>{{carDto.brandName}}</td>
-      <td>{{carDto.colorName}}</td>
-      <td>{{carDto.modelYear}}</td>
-      <td>{{carDto.dailyPrice |currency:"TL "}}</td>
-      <td>{{carDto.description}}</td>
-      <td><button routerLink="/carDto/carImage/{{carDto.carId}}"  (click)="setCurrentCarDto(carDto)"  class="btn btn-outline-danger"  >Araç Detay</button></td>
-      <td><button class="btn btn-outline-success">Kirala</button></td>
-    </tr>
-  </tbody>
-</table>
+<div >
+  <div class="row">
+    <div class="col-md-3" >
+      <select class="form-select"  [(ngModel)]="currentColorId" aria-label="Default select example">
+        <option value="0" selected disabled hidden>Renk seçiniz</option>
+        <option *ngFor="let color of colors" (click)="getCarDtosByBrandAndColor()" value="{{color.colorId}}" >{{color.colorName}}</option>
+      </select>
+    </div>
+    <div class="col-md-9">
+      <table class="table ">
+        <thead>
+          <tr>
+            <th>Araba Id</th>
+            <th>Marka Adı</th>
+            <th>Renk</th>
+            <th>Model Yılı</th>
+            <th>Fiyat</th>
+            <th>Araba Detay</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let carDto of carDtos" class="list-group-item-light" >
+            <td>{{carDto.carId}}</td>
+            <td>{{carDto.brandName}}</td>
+            <td>{{carDto.colorName}}</td>
+            <td>{{carDto.modelYear}}</td>
+            <td>{{carDto.dailyPrice |currency:"TL "}}</td>
+            <td>{{carDto.description}}</td>
+            <td><button routerLink="/carDto/carImage/{{carDto.carId}}"  (click)="setCurrentCarDto(carDto)"  class="btn btn-outline-danger"  >Araç Detay</button></td>
+            <td><button class="btn btn-outline-success">Kirala</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+        <select class="form-select " [(ngModel)]="currentBrandId"  aria-label="Default select example">
+          <option value="0" selectedselected disabled hidden>Marka seçiniz</option>
+          <option *ngFor="let brand of brands" value="{{brand.brandId}}">{{brand.brandName}}</option>
+        </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <button (click)="getCarDtosByBrandAndColor()"  class="btn btn-outline-danger"  >Filtrele</button>
+      <button  (click)="resetCurrents()" type="reset" class="btn btn-danger" style=" position: relative; left: 10px;">Temizle</button>
+    </div>
+  </div>
+
+</div>

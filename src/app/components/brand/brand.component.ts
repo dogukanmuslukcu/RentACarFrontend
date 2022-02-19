@@ -35,7 +35,7 @@ export class BrandComponent implements OnInit {
       return "list-group-item "
     }
   }
-  getAllCarDto(){
+  getAllBrands(){
     if(!this.currentBrand){
       return "list-group-item active"
     }

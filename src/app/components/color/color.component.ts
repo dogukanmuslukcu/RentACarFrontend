@@ -24,6 +24,15 @@ export class ColorComponent implements OnInit {
       this.colors= response.data;
     })
   }
+
+  getAllColors(){
+    if(!this.currentColor){
+      return "list-group-item active"
+    }
+    else{
+      return "list-group-item"
+    }
+  }
   setCurrentColor(color:Color){
     this.currentColor = color;
   }
@@ -35,14 +44,5 @@ export class ColorComponent implements OnInit {
       return "list-group-item "
     }
   }
-  getAllColors(){
-    if(!this.currentColor){
-      return "list-group-item active"
-    }
-    else{
-      return "list-group-item"
-    }
-  }
-
 
 }

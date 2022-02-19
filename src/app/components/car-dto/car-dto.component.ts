@@ -33,10 +33,10 @@ export class CarDtoComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(params =>{
        if(params["brandId"]){
- this.getCarDtosBrandId(params["brandId"])
+ this.getCarDtosByBrandId(params["brandId"])
        }
       else if(params["colorId"]){
-        this.getCarDtosColorId(params["colorId"])
+        this.getCarDtosByColorId(params["colorId"])
       }
       else{
         this.getCarDtos()
@@ -64,13 +64,13 @@ this.brandService.getBrands().subscribe(response=>{
   this.brands = response.data;
 })
 }
-  getCarDtosBrandId(brandId:number){
-   this.carDtoService.getCarDtosBrandId(brandId).subscribe(response =>{
+  getCarDtosByBrandId(brandId:number){
+   this.carDtoService.getCarDtosByColorId(brandId).subscribe(response =>{
      this.carDtos = response.data
    })
   }
-  getCarDtosColorId(colorId:number){
-    this.carDtoService.getCarDtosColorId(colorId).subscribe(response =>{
+  getCarDtosByColorId(colorId:number){
+    this.carDtoService.getCarDtosByColorId(colorId).subscribe(response =>{
       this.carDtos = response.data;
     })
   }
@@ -79,10 +79,10 @@ this.brandService.getBrands().subscribe(response=>{
       this.getCarDtos()
     }
     else if(this.currentBrandId == 0){
-      this.getCarDtosColorId(this.currentColorId)
+      this.getCarDtosByColorId(this.currentColorId)
     }
     else if(this.currentColorId == 0){
-      this.getCarDtosBrandId(this.currentBrandId)
+      this.getCarDtosByColorId(this.currentBrandId)
     }
   }
   setCurrentCarDto(carDto:CarDto){

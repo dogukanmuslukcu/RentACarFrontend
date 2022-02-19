@@ -16,7 +16,7 @@ export class CarImageService {
     let newPath =this.apiurl+"getall"
     return this.httpClient.get<listResponseModel<CarImage>>(newPath)
   }
-  getCarImagesCarId(carId:number):Observable<listResponseModel<CarImage>>{
+  getCarImagesByCarId(carId:number):Observable<listResponseModel<CarImage>>{
     let newPath=this.apiurl+"getimagesbycarid?carId="+carId
     return this.httpClient.get<listResponseModel<CarImage>>(newPath)
   }

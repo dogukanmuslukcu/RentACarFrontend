@@ -23,8 +23,8 @@ carImageDtos:CarImageDto[]=[];
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params =>{
  if(params["carId"]){
-       this.getCarImageDtoCarId(params["carId"]);
-       this.getCarDtoCarId(params["carId"]);
+       this.getCarImageDtoByCarId(params["carId"]);
+       this.getCarDtoByCarId(params["carId"]);
      }
      else{
        this.getCarImages()
@@ -38,19 +38,19 @@ carImageDtos:CarImageDto[]=[];
       this.carImages=response.data;
     })
   }
-  getCarImageCarId(carId:number){
-    this.carImageService.getCarImagesCarId(carId).subscribe(response=>{
+  getCarImageByCarId(carId:number){
+    this.carImageService.getCarImagesByCarId(carId).subscribe(response=>{
       this.carImages = response.data;
     })
   }
-  getCarDtoCarId(carId:number){
-    this.carDtoService.getCarDtosCarId(carId).subscribe(response=>{
+  getCarDtoByCarId(carId:number){
+    this.carDtoService.getCarDtosByCarId(carId).subscribe(response=>{
     this.carDtos = response.data;
     })
   }
 
-  getCarImageDtoCarId(carId:number){
-this.carImageDtoService.getCarImageDtoCarId(carId).subscribe(response=>{
+  getCarImageDtoByCarId(carId:number){
+this.carImageDtoService.getCarImageDtoByCarId(carId).subscribe(response=>{
   this.carImageDtos=response.data
 })
   }

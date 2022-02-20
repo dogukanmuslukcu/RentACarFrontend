@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
   colors:Color[]=[];
   brands:Brand[]=[];
   currentColor:Color;
-  currentCarDto:CarDto;
   currentBrand :Brand;
   filterTextColor="";
   filterTextBrand="";
@@ -89,9 +88,7 @@ this.getCarDtosByBrandId(params["brandId"])
   setCurrentBrand(brand:Brand){
     this.currentBrand = brand;
   }
-  setCurrentCarDto(carDto:CarDto){
-    this.currentCarDto =carDto;
-  }
+
   getCurrentColor(color:Color){
     if(color==this.currentColor){
       return "list-group-item active"

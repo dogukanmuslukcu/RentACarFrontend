@@ -6,12 +6,12 @@
         <label for="filterText" class="form-label"></label>
         <input type="text" [(ngModel)]="filterTextColor" class="form-control" id="filterText" placeholder="Renk İsmi Giriniz">
       </div>
-      <ul class="list-group-item list-group-item-info"  >
+      <ul class="list-group-item list-group-item-light"  >
         <li class="list-group-item btn-primary"
           routerLink="" >
           Tüm Renkler
           </li>
-        <li class="list-group-item-danger"
+        <li class="list-group-item-dark"
           (click)="setCurrentColor(color)"
           routerLink="/carDto/color/{{ color.colorId }}"
           *ngFor="let color of colors |colorFilter:filterTextColor"
@@ -111,7 +111,6 @@
             <td>{{carDto.modelYear}}</td>
             <td>{{carDto.dailyPrice | currency:"TL "}}</td>
             <td><button routerLink="/carDto/carImage/{{carDto.carId}}"
-                (click)="setCurrentCarDto(carDto)"
                 class="btn btn-outline-danger" >Araç Detay</button></td>
           </tr>
         </tbody>

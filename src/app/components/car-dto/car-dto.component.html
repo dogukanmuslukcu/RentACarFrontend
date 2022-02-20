@@ -27,8 +27,8 @@
             <td>{{carDto.modelYear}}</td>
             <td>{{carDto.dailyPrice |currency:"TL "}}</td>
             <td>{{carDto.description}}</td>
-            <td><button routerLink="/carDto/carImage/{{carDto.carId}}"  (click)="setCurrentCarDto(carDto)"  class="btn btn-outline-danger"  >Araç Detay</button></td>
-            <td><button class="btn btn-outline-success">Kirala</button></td>
+            <td><button routerLink="/carDto/carImage/{{carDto.carId}}"    class="btn btn-outline-danger"  >Araç Detay</button></td>
+            <td><button routerLink="/carDto/carImage/{{carDto.carId}}/rental"    class="btn btn-outline-danger"  >Araç Detay2</button></td>
           </tr>
         </tbody>
       </table>

@@ -20,7 +20,6 @@ export class CarDtoComponent implements OnInit {
   carImages:CarImage[]=[];
   colors:Color[]=[];
   brands:Brand[]=[];
-  currentCarDto:CarDto;
   currentBrandId =0;
   currentColorId=0;
   constructor(
@@ -37,6 +36,9 @@ export class CarDtoComponent implements OnInit {
        }
       else if(params["colorId"]){
         this.getCarDtosByColorId(params["colorId"])
+      }
+      else if(params["colorId"],params["brandId"]){
+        this.getCarDtosByColorAndBranId(params["colorId"],params["brandId"])
       }
       else{
         this.getCarDtos()
@@ -74,6 +76,11 @@ this.brandService.getBrands().subscribe(response=>{
       this.carDtos = response.data;
     })
   }
+  getCarDtosByColorAndBranId(colorId:number ,brandId:number){
+    this.carDtoService.getCarDtosByColorAndBrandId(colorId,brandId).subscribe(response=>{
+      this.carDtos = response.data
+    })
+  }
   getCarDtosByBrandAndColor(){
     if(this.currentColorId ==0 &&this.currentBrandId ==0){
       this.getCarDtos()
@@ -83,11 +90,11 @@ this.brandService.getBrands().subscribe(response=>{
     }
     else if(this.currentColorId == 0){
       this.getCarDtosByColorId(this.currentBrandId)
+    }else{
+      this.getCarDtosByColorAndBranId(this.currentColorId,this.currentBrandId)
     }
   }
-  setCurrentCarDto(carDto:CarDto){
-    this.currentCarDto =carDto;
-  }
+
   resetCurrents(){
     this.currentBrandId=0
     this.currentColorId=0

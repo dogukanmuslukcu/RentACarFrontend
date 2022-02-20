@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RentalDtoService } from 'src/app/services/rental/rental-dto.service';
 import { RentalDto } from 'src/app/models/rentalDto';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-rental-dto',
@@ -11,7 +12,7 @@ export class RentalDtoComponent implements OnInit {
 
 
   rentalDtos : RentalDto [] = []
-  constructor(private rentalDtoService : RentalDtoService) { }
+  constructor(private rentalDtoService : RentalDtoService,  private activatedRoute :ActivatedRoute) { }
 
   ngOnInit(): void {
    this.getRentalDtos();

@@ -17,7 +17,7 @@ export class CarImageDtoService {
     return this.httpClient.get<listResponseModel<CarImageDto>>(newPath)
   }
   getCarImageDtoByCarId(carId:number):Observable<listResponseModel<CarImageDto>>{
-    let newPath =this.apiUrl+"/getbyidforimagedto?id="+carId
+    let newPath =this.apiUrl+"/getcarimagedetailbyid?id="+carId
     return this.httpClient.get<listResponseModel<CarImageDto>>(newPath)
   }
 }

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "carDtos" , component:CarDtoComponent},
   {path: "carDto/color/:colorId",component:HomeComponent},
   {path:"carDto/carImage/:carId",component:CarImageComponent},
-  {path:"carDto/carImage/:carId/rental",component:RentalDtoComponent}
+  {path:"carDto/rental/:carId",component:RentalDtoComponent}
 
 ];
 

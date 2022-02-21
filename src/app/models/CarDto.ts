@@ -5,6 +5,7 @@ export interface CarDto{
   colorName:string,
   modelYear:number,
   dailyPrice:number,
-  description:String
+  description:String,
+  isCarRentable:boolean
 
 }

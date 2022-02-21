@@ -77,11 +77,11 @@
         <label for="filterText" class="form-label"></label>
         <input type="text" [(ngModel)]="filterTextBrand" class="form-control" id="filterText" placeholder="Marka İsmi Giriniz">
       </div>
-      <ul class="list-group-item list-group-item-info">
+      <ul class="list-group-item list-group-item-light">
         <li class="list-group-item btn-primary" routerLink="" >
           Tüm Markalar
           </li>
-      <li class="list-group-item-danger"
+      <li class="list-group-item-dark"
       (click)=" setCurrentBrand(brand)"
         routerLink="/carDto/brand/{{brand.brandId}}"
          *ngFor="let brand of brands |brandFilter:filterTextBrand"

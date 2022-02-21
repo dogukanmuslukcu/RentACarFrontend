@@ -10,9 +10,9 @@ import { listResponseModel } from 'src/app/models/listResponseModel';
 export class CarDtoService {
    apiUrl = "https://localhost:44309/api/cars";
   constructor(private httpClient : HttpClient) { }
-
+ // https://localhost:44309/api/cars/getcardetails
   getCarDtos():Observable<listResponseModel<CarDto>>{
-    let newPath =this.apiUrl+"/getCarDetails"
+    let newPath =this.apiUrl+"/getcardetails"
     return this.httpClient.get<listResponseModel<CarDto>>(newPath)
   }
   getCarDtosByBrandId(brandId:number):Observable<listResponseModel<CarDto>>{

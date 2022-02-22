@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { listResponseModel } from 'src/app/models/listResponseModel';
+import { Rental } from 'src/app/models/rental';
 import { RentalDto } from 'src/app/models/rentalDto';
+import { ResponseModel } from 'src/app/models/responseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +20,8 @@ export class RentalDtoService {
 
   }
 
+  rent(rental:Rental):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"add",rental)
+  }
 
 }

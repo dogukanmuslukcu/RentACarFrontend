@@ -43,9 +43,12 @@
   <div class="row">
     <div class="col-md-3">
         <select class="form-select " [(ngModel)]="currentBrandId"  aria-label="Default select example">
-          <option value="0" selectedselected disabled hidden>Marka seçiniz</option>
+          <option value="0" selected  disabled hidden>Marka seçiniz</option>
           <option *ngFor="let brand of brands" value="{{brand.brandId}}">{{brand.brandName}}</option>
         </select>
+    </div>
+    <div class="col-md-9">
+<app-rental-dto></app-rental-dto>
     </div>
   </div>
   <div class="row">

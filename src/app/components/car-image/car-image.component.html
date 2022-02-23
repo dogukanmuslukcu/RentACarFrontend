@@ -29,8 +29,10 @@
     <h3> <span>Model Year</span> : {{carImageDto.modelYear}} </h3>
     <h2 class="description"> {{carImageDto.description}} </h2>
     <a routerLink="" class="btn btn-dark">Araçlara Dön</a>
-    <a><button routerLink="/carDto/carImage/{{carImageDto.carId}}/rental"
+    <a><button *ngIf="isCarRent==true" (click)="getCarDtoByCarId(carImageDto.carId)" (click)="setIsCarRentable()" routerLink="/carDto/rental/{{carImageDto.carId}}"
       class="btn btn-success"  >Araç Kirala</button></a>
+      <a><button *ngIf="isCarRent==false" (click)="getCarDtoByCarId(carImageDto.carId)" (click)="setIsCarRentable()" routerLink=""
+        class="btn btn-success"  >Araç Kirala</button></a>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-<table class="table table-bordered table-info  table-hover">
+<table class="table" >
   <thead>
     <tr>
       <th>Kiralama Id</th>
@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody >
-    <tr *ngFor="let rentalDto of rentalDtos" >
+    <tr *ngFor="let rentalDto of rentalDtos" class="list-group-item-light">
       <td>{{rentalDto.rentId}}</td>
       <td>{{rentalDto.brandName}}</td>
       <td>{{rentalDto.customerName}}</td>

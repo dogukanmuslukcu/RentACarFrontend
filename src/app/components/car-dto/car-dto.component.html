@@ -29,10 +29,10 @@
             <td>{{carDto.dailyPrice |currency:"TL "}}</td>
             <td>{{carDto.description}}</td>
             <td >{{carDto.description}}</td>
-            <td><button  routerLink="/carDto/carImage/{{carDto.carId}}"  class="btn btn-outline-danger"  >Araç Detay</button></td>
+            <td><button  routerLink="/carDto/carImage/{{carDto.carId}}"  class="btn btn-dark"  >Araç Detay</button></td>
             <td>
-              <button  *ngIf="carDto.isCarRentable==true" (click)="setCurrentCarDto(carDto)" routerLink="/carDto/rental/{{carDto.carId}}" class="btn btn-outline-danger"  >Kirala</button>
-              <button  *ngIf="carDto.isCarRentable==false" (click)="setCurrentCarDto(carDto)" routerLink="/carDtos" class="btn btn-outline-danger"  >Kirala</button>
+              <button  *ngIf="carDto.isCarRentable==true" (click)="setCurrentCarDto(carDto)" routerLink="/carDto/rental/{{carDto.carId}}" class="btn btn-success"  >Kirala</button>
+              <button  *ngIf="carDto.isCarRentable==false" (click)="setCurrentCarDto(carDto)" routerLink="/carDtos" class="btn btn-success"  >Kirala</button>
 
             </td>
           </tr>
@@ -53,8 +53,8 @@
   </div>
   <div class="row">
     <div class="col-md-3">
-      <button (click)="getCarDtosByBrandAndColor()"  class="btn btn-outline-danger"  >Filtrele</button>
-      <button  (click)="resetCurrents()" type="reset" class="btn btn-danger" style=" position: relative; left: 10px;">Temizle</button>
+      <button (click)="getCarDtosByBrandAndColor()"  class="btn btn-dark"  >Filtrele</button>
+      <button  (click)="resetCurrents()" type="reset" class="btn btn-success" style=" position: relative; left: 10px;">Temizle</button>
     </div>
   </div>
 </div>

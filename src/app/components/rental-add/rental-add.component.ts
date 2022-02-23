@@ -16,6 +16,7 @@ export class RentalAddComponent implements OnInit {
   CarRentForm:FormGroup;
   CreditCardForm:FormGroup;
   carId:Number;
+  isPaymentSucces:boolean
 
   constructor(
     private formBuilder :FormBuilder,
@@ -62,8 +63,9 @@ if(response.success){
   if(this.CarRentForm.valid){
     let carModel = Object.assign({},this.CarRentForm.value);
     this.rentalService.rent(carModel).subscribe(response=>{
-
       this.toastrService.success(response.message,"Başarılı!")
+      this.isPaymentSucces = true;
+      console.log(this.isPaymentSucces)
 
     },responseError=>{
       if(responseError.error.Errors.length>0){

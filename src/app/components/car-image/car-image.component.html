@@ -30,9 +30,9 @@
     <h2 class="description"> {{carImageDto.description}} </h2>
     <a routerLink="" class="btn btn-dark">Araçlara Dön</a>
     <a><button *ngIf="isCarRent==true" (click)="getCarDtoByCarId(carImageDto.carId)" (click)="setIsCarRentable()" routerLink="/carDto/rental/{{carImageDto.carId}}"
-      class="btn btn-success"  >Araç Kirala</button></a>
+      class="btn btn-success"  >Aracı Kirala</button></a>
       <a><button *ngIf="isCarRent==false" (click)="getCarDtoByCarId(carImageDto.carId)" (click)="setIsCarRentable()" routerLink=""
-        class="btn btn-success"  >Araç Kirala</button></a>
+        class="btn btn-success"  >Aracı Kirala</button></a>
   </div>
 </div>
 

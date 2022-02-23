@@ -20,7 +20,8 @@ import { BrandFilterPipe } from './pipes/brand/brand-filter.pipe';
 import { CarFilterPipe } from './pipes/car/car-filter.pipe';
 
 import{ToastrModule} from "ngx-toastr";
-import { RentalAddComponent } from './components/rental-add/rental-add.component'
+import { RentalAddComponent } from './components/rental-add/rental-add.component';
+import { PaymentSuccessComponent } from './components/payment-success/payment-success.component'
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { RentalAddComponent } from './components/rental-add/rental-add.component
     ColorFilterPipe,
     BrandFilterPipe,
     CarFilterPipe,
-    RentalAddComponent
+    RentalAddComponent,
+    PaymentSuccessComponent
 
   ],
   imports: [

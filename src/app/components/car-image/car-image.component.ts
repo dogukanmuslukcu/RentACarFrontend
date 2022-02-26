@@ -64,7 +64,7 @@ isCarRent:boolean
       this.toastrService.success("Araç kiralanabilir");
     } else {
       this.isCarRent=false
-      this.toastrService.error("Araç kiralanabilir");
+      this.toastrService.error("Araç hali hazırda başkası tarafından kiralanmıştır.");
     }
   }
   getCarImageDtoByCarId(carId:number){

@@ -6,7 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PaymentSuccessComponent } from './components/payment-success/payment-success.component';
 import { RentalAddComponent } from './components/rental-add/rental-add.component';
-import { RentalDtoComponent } from './components/rental-dto/rental-dto.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '',pathMatch: 'full', component: HomeComponent },
@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "carDtos" , component:CarDtoComponent},
   {path: "carDto/color/:colorId",component:HomeComponent},
   {path:"carDto/carImage/:carId",component:CarImageComponent},
-  {path:"carDto/rental/:carId",component:RentalAddComponent},
+  {path:"carDto/rental/:carId",component:RentalAddComponent ,canActivate:[LoginGuard]},
   {path:"payment/success",component:PaymentSuccessComponent},
   {path:"login",component:LoginComponent}
 

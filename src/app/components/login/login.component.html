@@ -1,18 +1,18 @@
 <body class="text-center">
 
   <main class="form-signin">
-    <form>
+    <form [formGroup]="loginForm">
       <img class="mb-4"
       src="https://media.istockphoto.com/vectors/auto-car-icon-vector-illustration-template-modern-sport-car-vector-vector-id1254556601?k=20&m=1254556601&s=170667a&w=0&h=zwRXAfiuMf7oK19OxpUJIyIdOXQgmni58JFeQ6v0oqE="
        alt="" width="200" height="200">
       <h1 class="h3 mb-3 fw-normal">Giriş Yapınız</h1>
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">E-mail </label>
+        <input type="email" class="form-control" formControlName="email" id="email" placeholder="name@example.com">
+        <label for="floatingInput">E-mail</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control"formControlName="password" id="password" placeholder="Password">
         <label for="floatingPassword">Parola</label>
       </div>
 <!--
@@ -21,8 +21,8 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div> -->
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Giriş</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+      <button class="w-100 btn btn-lg btn-primary" (click)="login()">Giriş</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
     </form>
   </main>
 

@@ -5,6 +5,7 @@ import { FormControl,FormsModule,ReactiveFormsModule } from '@angular/forms';
 import{BrowserAnimationsModule} from "@angular/platform-browser/animations"
 import { DatePipe } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { BrandComponent } from './components/brand/brand.component';
@@ -58,7 +59,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true},
-    DatePipe],
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },JwtHelperService,
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

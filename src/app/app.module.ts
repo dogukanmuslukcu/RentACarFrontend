@@ -25,6 +25,7 @@ import { RentalAddComponent } from './components/rental-add/rental-add.component
 import { PaymentSuccessComponent } from './components/payment-success/payment-success.component';
 import { LoginComponent } from './components/login/login.component'
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register/register.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     CarFilterPipe,
     RentalAddComponent,
     PaymentSuccessComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
 
   ],
   imports: [

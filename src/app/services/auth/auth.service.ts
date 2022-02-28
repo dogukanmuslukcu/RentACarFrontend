@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { DecodedToken } from 'src/app/models/decodedToken';
 import { LoginModel } from 'src/app/models/loginModel';
+import { RegisterModel } from 'src/app/models/registerModel';
 import { SingleResponseModel } from 'src/app/models/singleResponseModel';
 import { TokenModel } from 'src/app/models/tokenModel';
 
@@ -23,12 +24,20 @@ export class AuthService {
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + "/login", loginModel)
   }
 
+  register(RegisterModel:RegisterModel){
+    return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl+"/register",RegisterModel)
+  }
+
   isAuthanticated() {
     if (localStorage.getItem("token")) {
       return true;
     } else {
       return false;
     }
+  }
+
+  logOut(){
+    localStorage.removeItem("token");
   }
 
   getUserDetailsFromToken() {

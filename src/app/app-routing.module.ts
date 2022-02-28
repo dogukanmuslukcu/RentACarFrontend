@@ -7,6 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PaymentSuccessComponent } from './components/payment-success/payment-success.component';
 import { RegisterComponent } from './components/register/register/register.component';
 import { RentalAddComponent } from './components/rental-add/rental-add.component';
+import { UserComponent } from './components/user/user.component';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:"carDto/rental/:carId",component:RentalAddComponent ,canActivate:[LoginGuard]},
   {path:"payment/success",component:PaymentSuccessComponent},
   {path:"login",component:LoginComponent},
-  {path:"register",component:RegisterComponent}
+  {path:"register",component:RegisterComponent},
+  {path:"user",component:UserComponent, canActivate:[LoginGuard]}
 
 ];
 

@@ -43,10 +43,7 @@ export class AuthService {
   getUserDetailsFromToken() {
     const token: any = localStorage.getItem("token");
     const decodedToken = this.jwtHelperService.decodeToken(token);
-    if(this.decodedToken.Expiration<Math.floor(Date.now()/1000))
-    {
-    this.logOut();
-    }
+
     this.decodedToken['Token'] = localStorage.getItem("token");
     this.decodedToken['DecodedToken'] = this.jwtHelperService.decodeToken(token);
     this.decodedToken['Expiration'] = +decodedToken['exp'];

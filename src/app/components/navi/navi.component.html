@@ -1,36 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg">
   <div class="container navbar navbar-dark bg-dark ">
-    <a class="navbar-brand " href="">Rent A Car</a>
+    <img src="https://media.istockphoto.com/vectors/auto-car-icon-vector-illustration-template-modern-sport-car-vector-vector-id1254556601?k=20&m=1254556601&s=170667a&w=0&h=zwRXAfiuMf7oK19OxpUJIyIdOXQgmni58JFeQ6v0oqE=" alt="" width="70" height="70"
+    class="d-inline-block align-text-top">
+
+    <a class="navbar-brand " routerLink="">Rent A Car</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item ">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="">AnaSayfa</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/carDtos">Arabalar</a>
         </li>
-        <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-      </form>
+      <nav *ngIf="!isAuthenticated()" class="navbar navbar-light bg-light">
+        <form class="container-fluid justify-content-start">
+          <button routerLink="/login" class="btn btn btn-outline-secondary" type="button">Giriş Yap</button>
+          &nbsp;
+          <button routerLink="/register" class="btn btn btn-outline-secondary" type="button">Kayıt Ol</button>
+        </form>
+      </nav>
+      <div *ngIf="isAuthenticated()" class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          {{userName}}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" (click)="logOut()">Çıkış Yap</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>

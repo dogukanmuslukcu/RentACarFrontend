@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-navi',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NaviComponent implements OnInit {
 
-  constructor() { }
+  userName:string;
+
+  constructor(
+    private authService:AuthService
+  ) { }
 
   ngOnInit(): void {
+    this.authService.getUserDetailsFromToken();
+    this.isAuthenticated();
   }
 
+  isAuthenticated(){
+    if (this.authService.isAuthenticated()) {
+      this.userName=this.authService.decodedToken['Name']
+      return true;
+    } else {
+      return false;
+    }
+  }
+  logOut(){
+    this.authService.logOut();
+    console.log(this.authService.decodedToken['Name'])
+  }
 }

@@ -1,27 +1,53 @@
 # RentACarFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
+## Technologies
+- Angular 13
+- TypeScript
+- Bootstrap
+- Jquery
 
-## Development server
+## Techniques
+- JWT
+- File Upload
+- FormFile
+- Interceptors
+- Guards
+- Pipes
+- Service
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Images
 
-## Code scaffolding
+### Home
+<img src="src/RentACarPics/Home(1).png" />
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### HomeWithFilter
+<img src="src/RentACarPics/Home(2).png" />
 
-## Build
+### login
+<img src="src/RentACarPics/Login.png" />
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Register
+<img src="src/RentACarPics/Register.png" />
 
-## Running unit tests
+### Cars
+<img src="src/RentACarPics/cars.png" />
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### CarDetail
+<img src="src/RentACarPics/carDetail.png" />
 
-## Running end-to-end tests
+### Rental
+<img src="src/RentACarPics/rental.png" />
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### PaymentSuccess
+<img src="src/RentACarPics/paymentSuccess.png" />
 
-## Further help
+### UserAccount
+<img src="src/RentACarPics/UserInfo.png" />
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### UserUpdate
+<img src="src/RentACarPics/UserUpdate.png" />
+
+
+
+
+

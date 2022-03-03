@@ -28,6 +28,7 @@ export class NaviComponent implements OnInit {
     }
   }
   logOut() {
+    console.log(this.userName)
     this.authService.logOut();
   }
 }

@@ -27,6 +27,7 @@ import { LoginComponent } from './components/login/login.component'
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RegisterComponent } from './components/register/register/register.component';
 import { UserComponent } from './components/user/user.component';
+import { UserUpdateComponent } from './components/user-update/user-update/user-update.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { UserComponent } from './components/user/user.component';
     PaymentSuccessComponent,
     LoginComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    UserUpdateComponent
 
   ],
   imports: [

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CarDtoComponent } from './components/car-dto/car-dto.component';
-import { CarImageComponent } from './components/car-image/car-image.component';
+import { CarDtoComponent } from './components/car/car-dto/car-dto.component';
+import { CarImageComponent } from './components/car/car-image/car-image.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PaymentSuccessComponent } from './components/payment-success/payment-success.component';
-import { RegisterComponent } from './components/register/register/register.component';
-import { RentalAddComponent } from './components/rental-add/rental-add.component';
-import { UserUpdateComponent } from './components/user-update/user-update/user-update.component';
-import { UserComponent } from './components/user/user.component';
+import { RegisterComponent } from './components/register/register.component';
+import { RentalAddComponent } from './components/rental/rental-add/rental-add.component';
+import { UserUpdateComponent } from './components/users/user-update/user-update.component';
+import { UserComponent } from './components/users/user/user.component';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CarImage } from 'src/app/models/carImage';
-import { listResponseModel } from 'src/app/models/listResponseModel';
+import { CarImage } from 'src/app/models/car/carImage';
+import { listResponseModel } from 'src/app/models/ResponseModels/listResponseModel';
 
 @Injectable({
   providedIn: 'root'

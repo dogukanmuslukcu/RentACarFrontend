@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { DecodedToken } from 'src/app/models/decodedToken';
-import { LoginModel } from 'src/app/models/loginModel';
-import { RegisterModel } from 'src/app/models/registerModel';
-import { SingleResponseModel } from 'src/app/models/singleResponseModel';
-import { TokenModel } from 'src/app/models/tokenModel';
+import { DecodedToken } from 'src/app/models/login-register/decodedToken';
+import { LoginModel } from 'src/app/models/login-register/loginModel';
+import { RegisterModel } from 'src/app/models/login-register/registerModel';
+import { SingleResponseModel } from 'src/app/models/ResponseModels/singleResponseModel';
+import { TokenModel } from 'src/app/models/login-register/tokenModel';
 
 
 @Injectable({

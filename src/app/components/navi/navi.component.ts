@@ -8,10 +8,10 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class NaviComponent implements OnInit {
 
-  userName:string;
+  userName: string;
 
   constructor(
-    private authService:AuthService
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -19,16 +19,15 @@ export class NaviComponent implements OnInit {
     this.isAuthenticated();
   }
 
-  isAuthenticated(){
+  isAuthenticated() {
     if (this.authService.isAuthenticated()) {
-      this.userName=this.authService.decodedToken['Name']
+      this.userName = this.authService.decodedToken['Name']
       return true;
     } else {
       return false;
     }
   }
-  logOut(){
+  logOut() {
     this.authService.logOut();
-    console.log(this.authService.decodedToken['Name'])
   }
 }

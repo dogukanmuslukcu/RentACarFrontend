@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  registerForm:FormGroup
+  registerForm: FormGroup
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -28,13 +28,13 @@ export class RegisterComponent implements OnInit {
       password: ["", Validators.required]
     })
   }
-  register(){
-    if(this.registerForm.valid){
-      let registerModel = Object.assign({},this.registerForm.value)
-      this.authService.register(registerModel).subscribe(response=>{
+  register() {
+    if (this.registerForm.valid) {
+      let registerModel = Object.assign({}, this.registerForm.value)
+      this.authService.register(registerModel).subscribe(response => {
         this.toastrService.info(response.message)
-        localStorage.setItem("token",response.data.token)
-      },responseError=>{
+        localStorage.setItem("token", response.data.token)
+      }, responseError => {
         this.toastrService.error(responseError.error)
       })
     }

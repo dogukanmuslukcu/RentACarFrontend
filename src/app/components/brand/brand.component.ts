@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Brand } from 'src/app/models/brand';
+import { Brand } from 'src/app/models/brand/brand';
 import { BrandService } from 'src/app/services/brand/brand.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { BrandService } from 'src/app/services/brand/brand.service';
 export class BrandComponent implements OnInit {
 
   brands: Brand[] = [];
-  currentBrand :Brand
+  currentBrand: Brand
 
   constructor(private brandService: BrandService) { }
 
@@ -24,22 +24,22 @@ export class BrandComponent implements OnInit {
     })
   }
 
-  setCurrentBrand(brand:Brand){
+  setCurrentBrand(brand: Brand) {
     this.currentBrand = brand;
   }
-  getCurrentBrand(brand:Brand){
-    if(brand==this.currentBrand){
+  getCurrentBrand(brand: Brand) {
+    if (brand == this.currentBrand) {
       return "list-group-item active"
     }
-    else{
+    else {
       return "list-group-item "
     }
   }
-  getAllBrands(){
-    if(!this.currentBrand){
+  getAllBrands() {
+    if (!this.currentBrand) {
       return "list-group-item active"
     }
-    else{
+    else {
       return "list-group-item"
     }
   }

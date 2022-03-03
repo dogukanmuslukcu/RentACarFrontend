@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { CarImage } from 'src/app/models/carImage';
-import { CarDto } from 'src/app/models/carDto';
+import { CarImage } from 'src/app/models/car/carImage';
+import { CarDto } from 'src/app/models/car/carDto';
 import { CarDtoService } from 'src/app/services/car/car-dto.service';
 import { CarImageService } from 'src/app/services/carImage/car-image.service';
-import { Color } from 'src/app/models/color';
+import { Color } from 'src/app/models/color/color';
 import { ColorService } from 'src/app/services/color/color.service';
-import { Brand } from 'src/app/models/brand';
+import { Brand } from 'src/app/models/brand/brand';
 import { BrandService } from 'src/app/services/brand/brand.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CarDtoComponent implements OnInit {
 
-  routerUrl:String
+  routerUrl: String
   carDtos: CarDto[] = [];
   carImages: CarImage[] = [];
   colors: Color[] = [];
@@ -103,9 +103,9 @@ export class CarDtoComponent implements OnInit {
 
   setCurrentCarDto(carDto: CarDto) {
     this.currentCarDto = carDto;
-    if(this.currentCarDto.isCarRentable==true){
+    if (this.currentCarDto.isCarRentable == true) {
       this.toastrService.success("Araç kiralabilir.")
-    }else{
+    } else {
       this.toastrService.error("Araç Başkası Tarafından Kiralandığı İçin Kiralanamaz.")
     }
 

@@ -7,7 +7,7 @@ import { RentalDtoService } from 'src/app/services/rental/rental-dto.service';
 import { PaymentService } from 'src/app/services/payment/payment.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { CustomerService } from 'src/app/services/customer/customer.service';
-import { Customer } from 'src/app/models/customer';
+import { Customer } from 'src/app/models/customer/customer';
 
 @Component({
   selector: 'app-rental-add',
@@ -19,15 +19,15 @@ export class RentalAddComponent implements OnInit {
   CarRentForm: FormGroup;
   CreditCardForm: FormGroup;
   carId: number;
-  customers:Customer[]=[];
-  customerId:Customer;
+  customers: Customer[] = [];
+  customerId: Customer;
 
 
 
   constructor(
     private rentalService: RentalDtoService,
-    private authService:AuthService,
-    private customerService:CustomerService,
+    private authService: AuthService,
+    private customerService: CustomerService,
     private formBuilder: FormBuilder,
     private datePipe: DatePipe,
     private activatedRoute: ActivatedRoute,
@@ -41,7 +41,7 @@ export class RentalAddComponent implements OnInit {
       this.carId = Number(params['carId']);
     })
     this.authService.getUserDetailsFromToken();
-    this. getCustomerIdByUserId()
+    this.getCustomerIdByUserId()
     this.createCarRentForm();
     this.createCreditCardForm();
 
@@ -51,7 +51,7 @@ export class RentalAddComponent implements OnInit {
 
     this.CarRentForm = this.formBuilder.group({
       carId: [this.carId],
-      customerId: ["",Validators.required],
+      customerId: ["", Validators.required],
       rentDate: [this.datePipe.transform(new Date(), 'yyyy-MM-dd'), Validators.required],
       returnDate: [this.datePipe.transform(new Date(), 'yyyy-MM-dd'), Validators.required]
     })
@@ -69,7 +69,7 @@ export class RentalAddComponent implements OnInit {
   }
 
   payment() {
-    this.CarRentForm.patchValue({customerId:this.customerId})
+    this.CarRentForm.patchValue({ customerId: this.customerId })
     if (this.CreditCardForm.valid) {
       let creditModel = Object.assign({}, this.CreditCardForm.value);
       this.paymentService.payment(creditModel).subscribe(response => {
@@ -79,7 +79,6 @@ export class RentalAddComponent implements OnInit {
           if (this.CarRentForm.valid) {
             let carModel = Object.assign({}, this.CarRentForm.value);
             this.rentalService.rent(carModel).subscribe(response => {
-console.log(carModel)
               this.toastrService.success(response.message, "Başarılı!")
               this.router.navigate(["payment/success"])
             }, responseError => {
@@ -108,11 +107,11 @@ console.log(carModel)
     }
   }
 
-  getCustomerIdByUserId(){
-    this.customerService.getCustomerByUserId(this.authService.decodedToken['UserId']).subscribe(response=>{
-    this.customers = response.data;
-    let[CustomerId,companyName,userId]=Object.values<Customer>(this.customers)
-    this.customerId=CustomerId;
+  getCustomerIdByUserId() {
+    this.customerService.getCustomerByUserId(this.authService.decodedToken['UserId']).subscribe(response => {
+      this.customers = response.data;
+      let [CustomerId, companyName, userId] = Object.values<Customer>(this.customers)
+      this.customerId = CustomerId;
     })
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user';
+import { User } from 'src/app/models/user/user';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserService } from 'src/app/services/user/user.service';
 
@@ -10,10 +10,10 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class UserComponent implements OnInit {
 
-  users:User[]=[]
+  users: User[] = []
   constructor(
-    private userService:UserService,
-    private authService:AuthService
+    private userService: UserService,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -21,9 +21,9 @@ export class UserComponent implements OnInit {
     this.authService.getUserDetailsFromToken();
   }
 
-  getUserByEmail(){
-    this.userService.getUserByEmail(this.authService.decodedToken['Email']).subscribe(response=>{
-      this.users=response.data
+  getUserByEmail() {
+    this.userService.getUserByEmail(this.authService.decodedToken['Email']).subscribe(response => {
+      this.users = response.data
     })
   }
 }

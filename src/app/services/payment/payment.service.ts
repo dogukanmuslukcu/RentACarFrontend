@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CreditCard } from 'src/app/models/creditCard';
-import { ResponseModel } from 'src/app/models/responseModel';
+import { CreditCard } from 'src/app/models/creditCard/creditCard';
+import { ResponseModel } from 'src/app/models/ResponseModels/responseModel';
 
 @Injectable({
   providedIn: 'root'

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Color } from 'src/app/models/color';
-import { listResponseModel } from 'src/app/models/listResponseModel';
+import { Color } from 'src/app/models/color/color';
+import { listResponseModel } from 'src/app/models/ResponseModels/listResponseModel';
 
 @Injectable({
   providedIn: 'root'

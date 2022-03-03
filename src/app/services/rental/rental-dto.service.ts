@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { listResponseModel } from 'src/app/models/listResponseModel';
-import { Rental } from 'src/app/models/rental';
-import { RentalDto } from 'src/app/models/rentalDto';
-import { ResponseModel } from 'src/app/models/responseModel';
+import { listResponseModel } from 'src/app/models/ResponseModels/listResponseModel';
+import { Rental } from 'src/app/models/rental/rental';
+import { RentalDto } from 'src/app/models/rental/rentalDto';
+import { ResponseModel } from 'src/app/models/ResponseModels/responseModel';
 
 @Injectable({
   providedIn: 'root'

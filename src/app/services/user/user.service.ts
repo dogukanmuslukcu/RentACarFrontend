@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { listResponseModel } from 'src/app/models/listResponseModel';
-import { ResponseModel } from 'src/app/models/responseModel';
-import { SingleResponseModel } from 'src/app/models/singleResponseModel';
-import { User } from 'src/app/models/user';
+import { listResponseModel } from 'src/app/models/ResponseModels/listResponseModel';
+import { ResponseModel } from 'src/app/models/ResponseModels/responseModel';
+import { SingleResponseModel } from 'src/app/models/ResponseModels/singleResponseModel';
+import { User } from 'src/app/models/user/user';
 
 @Injectable({
   providedIn: 'root'

@@ -10,7 +10,6 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { ColorComponent } from './components/color/color.component';
-import { CustomerComponent } from './components/customer/customer.component';
 import { CarDtoComponent } from './components/car/car-dto/car-dto.component';
 import { RentalDtoComponent } from './components/rental/rental-dto/rental-dto.component';
 import { NaviComponent } from './components/navi/navi.component';
@@ -35,7 +34,6 @@ import { UserUpdateComponent } from './components/users/user-update/user-update.
     AppComponent,
     BrandComponent,
     ColorComponent,
-    CustomerComponent,
     CarDtoComponent,
     RentalDtoComponent,
     NaviComponent,

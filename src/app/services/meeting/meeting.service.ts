@@ -6,4 +6,6 @@ import { Injectable } from '@angular/core';
 export class MeetingService {
 
   constructor() { }
+  piUrl = "https://localhost:44309/api/users/";
+
 }

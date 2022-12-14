@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.valid) {
       let registerModel = Object.assign({}, this.registerForm.value)
       this.authService.register(registerModel).subscribe(response => {
-        this.toastrService.info("Başarıyla kayıt olundu")
+        this.toastrService.info(response.message)
         localStorage.setItem("token", response.data.token)
       }, responseError => {
         this.toastrService.error(responseError.error)

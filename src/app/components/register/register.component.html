@@ -3,26 +3,25 @@
     <form [formGroup]="registerForm">
       <img
         class="mb-4"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDIi5mtcpzR_zYaPABub2-uuXwBou3FPESQsp9CgArI6eboUoaCQQWR-DskBEf8uq3d-k&usqp=CAU"
+        src="https://media.istockphoto.com/vectors/auto-car-icon-vector-illustration-template-modern-sport-car-vector-vector-id1254556601?k=20&m=1254556601&s=170667a&w=0&h=zwRXAfiuMf7oK19OxpUJIyIdOXQgmni58JFeQ6v0oqE="
         alt=""
         width="200"
         height="200"
-        id="images"
       />
       <h1 class="h3 mb-3 fw-normal">Kayıt Olunuz</h1>
 
-      <label for="email" class="mb-2">E-mail</label>
-      <div class="form-floating mb-2">
+<label for="email">E-mail</label>
+      <div class="form-floating">
         <input
           type="email"
-          class="form-control mb-2"
+          class="form-control"
           formControlName="email"
           id="email"
           placeholder="name@example.com"
         />
       </div>
-      <label for="firstName" class="mb-2">İsim</label>
-      <div class="form-floating mb-2">
+      <label for="firstName">İsim</label>
+      <div class="form-floating">
         <input
           type="text"
           class="form-control"
@@ -31,8 +30,8 @@
           placeholder="İsim"
         />
       </div>
-      <label for="lastName" class="mb-2">Soyisim</label>
-      <div class="form-floating mb-2">
+      <label for="lastName">Soyisim</label>
+      <div class="form-floating">
         <input
           type="text"
           class="form-control"
@@ -41,8 +40,8 @@
           placeholder="Soyisim"
         />
       </div>
-      <label for="password" class="mb-2">Parola</label>
-      <div class="form-floating mb-2">
+      <label for="password">Parola</label>
+      <div class="form-floating">
         <input
           type="password"
           class="form-control"
@@ -50,10 +49,16 @@
           id="password"
         />
       </div>
-
-      <button class="w-100 btn btn-lg btn-primary mt-4" (click)="register()">
+      <!--
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div> -->
+      <button class="w-100 btn btn-lg btn-primary" (click)="register()">
         Kayıt Ol
       </button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2018–2022</p>
     </form>
   </main>
 </body>

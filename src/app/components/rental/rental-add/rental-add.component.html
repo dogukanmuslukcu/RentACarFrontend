@@ -1,0 +1,159 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header"><h5 class="title">Araba Kirala</h5></div>
+      <div class="card-body">
+        <form [formGroup]="CarRentForm">
+          <div class="mb-3">
+            <label for="rentDate">Kiralama Tarihi</label>
+            <div class="form-group">
+              <input
+                type="date"
+                id="rentDate"
+                formControlName="rentDate"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="returnDate">Kiralama Bitiş Tarihi</label>
+            <div class="form-group">
+              <input
+                type="date"
+                id="returnDate"
+                formControlName="returnDate"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Kredi Kartı İle Ödeme</h5>
+      </div>
+      <div class="row justify-content-center mb-4 radio-group">
+        <div class="col-sm-3 col-5">
+          <div class="radio selected mx-auto" data-value="dk">
+            <img
+              class="fit-image"
+              src="https://i.imgur.com/5TqiRQV.jpg"
+              width="105px"
+              height="55px"
+            />
+          </div>
+        </div>
+        <div class="col-sm-3 col-5">
+          <div class="radio mx-auto" data-value="visa">
+            <img
+              class="fit-image"
+              src="https://i.imgur.com/OdxcctP.jpg"
+              width="105px"
+              height="55px"
+            />
+          </div>
+        </div>
+        <div class="col-sm-3 col-5">
+          <div class="radio mx-auto" data-value="master">
+            <img
+              class="fit-image"
+              src="https://i.imgur.com/WIAP9Ku.jpg"
+              width="105px"
+              height="55px"
+            />
+          </div>
+        </div>
+        <div class="col-sm-3 col-5">
+          <div class="radio mx-auto" data-value="paypal">
+            <img
+              class="fit-image"
+              src="https://i.imgur.com/cMk1MtK.jpg"
+              width="105px"
+              height="55px"
+            />
+          </div>
+        </div>
+        <br />
+      </div>
+      <div class="card-body">
+        <form [formGroup]="CreditCardForm">
+          <div class="mb-3">
+            <label for="NameAndSurname">Ad Soyad</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="NameAndSurname"
+                formControlName="NameAndSurname"
+                class="form-control"
+                placeholder="Kredi Kartı Üzerinde Bulunan İsim Soyisim'i Giriniz "
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="CartNumber">Kredi Kartı No</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="CartNumber"
+                formControlName="CartNumber"
+                class="form-control"
+                placeholder="16 Haneli Kredi Kartı No'sunu giriniz"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="ExpMonth">Ay</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="ExpMonth"
+                  formControlName="ExpMonth"
+                  class="form-control"
+                  placeholder="Kredi Kartı SKT-Ay'no giriniz"
+                />
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <label for="ExpYear">Yıl</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="ExpYear"
+                  formControlName="ExpYear"
+                  class="form-control"
+                  placeholder="Kredi Kartı SKT-Yıl'no giriniz"
+                />
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="Cvc">CVV/CVC</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Cvc"
+                  formControlName="Cvc"
+                  placeholder="123"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-fill btn-dark" (click)="payment()">
+          Ödemeyi Tamamla
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
